@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/* stylelint-disable at-rule-no-unknown */
+@theme {
+  --color-primary: #1a1116;
+  --color-primary-hover: #2a1b22;
+  --color-primary-light: #faf4f0;
+  --color-accent: #e8a5bb;
+  --color-accent-hover: #d88ba5;
+  --color-accent-light: #fef3f6;
+  --color-secondary: #c9877a;
+  --color-success: #10b981;
+  --color-success-light: #d1fae5;
+  --color-warning: #f59e0b;
+  --color-warning-light: #fef3c7;
+  --color-error: #ef4444;
+  --color-error-light: #fee2e2;
+  --color-surface: #ffffff;
+  --color-bg: #faf4f0;
+  --color-bg-dark: #1a1116;
+  --color-border: #f0e0e5;
+  --color-text-primary: #1a1116;
+  --color-text-secondary: #6b5560;
+  --color-text-muted: #9e8e93;
+}
+/* stylelint-enable at-rule-no-unknown */
+
+@layer base {
+  body {
+    font-family: 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in { animation: fadeIn 300ms ease-out; }
+  .animate-slide-up { animation: slideUp 300ms ease-out; }
+  .animate-scale-in { animation: scaleIn 400ms ease-out; }
+  .animate-check-draw { animation: checkDraw 600ms ease-out; }
+  .animate-pulse-soft { animation: pulseSoft 1.5s ease-in-out infinite; }
+  .animate-toast-enter { animation: toastEnter 300ms ease-out; }
+  .animate-float { animation: float 3s ease-in-out infinite; }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #e8a5bb 0%, #f4c2d1 50%, #e8a5bb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bg-gradient-hero {
+    background: linear-gradient(135deg, #1a1116 0%, #2a1b22 50%, #1a1116 100%);
+  }
+  .bg-gradient-rose {
+    background: linear-gradient(135deg, #e8a5bb 0%, #f4c2d1 100%);
+  }
+  .bg-gradient-gold {
+    /* shared alias so copied components don't break */
+    background: linear-gradient(135deg, #e8a5bb 0%, #f4c2d1 100%);
+  }
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+@keyframes checkDraw { 0% { transform: scale(0); opacity: 0; } 50% { transform: scale(1.2); opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes pulseSoft { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+@keyframes toastEnter { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.05) inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff;
+  transition: background-color 9999s ease-in-out 0s;
+}
