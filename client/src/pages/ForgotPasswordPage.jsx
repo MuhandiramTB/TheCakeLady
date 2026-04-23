@@ -7,7 +7,7 @@ export default function ForgotPasswordPage() {
   const [branding, setBranding] = useState({ salonName: 'SallonArt' });
 
   useEffect(() => {
-    api('/salon-info').then((r) => setInfo(r.data)).catch(() => {});
+    api('/store-info').then((r) => setInfo(r.data)).catch(() => {});
     api('/config/branding').then((r) => setBranding(r.data)).catch(() => {});
   }, []);
 
