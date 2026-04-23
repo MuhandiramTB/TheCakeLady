@@ -9,6 +9,18 @@ build/
 data/*.db
 data/*.db-wal
 data/*.db-shm
+**/data/*.db
+**/data/*.db-wal
+**/data/*.db-shm
 .vercel
 .vscode/
 .idea/
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+
+# Misc
+*.sallon-ref
+*.bak
