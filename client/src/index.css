@@ -28,8 +28,8 @@
 @layer base {
   body {
     font-family: 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
-    color: var(--color-text-primary);
-    background-color: var(--color-bg);
+    color: #ffffff;
+    background-color: var(--color-bg-dark);
     -webkit-font-smoothing: antialiased;
   }
 }
